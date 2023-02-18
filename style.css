@@ -2,6 +2,7 @@
 
 /* todo: make cards respondsive */
 /* todo: fix overflow of <h2> text */
+/* todo: format for 4quarters logo design */
 
 * {
 margin: 0;
@@ -16,7 +17,12 @@ body {
     align-items: center;
     justify-content: center;
     background: black;
-    overflow: hidden;
+}
+
+.card-collection{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12rem;
 }
 
 .card.rectangle{
