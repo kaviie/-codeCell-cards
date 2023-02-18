@@ -19,7 +19,7 @@ body {
     overflow: hidden;
 }
 
-.card {
+.card.rectangle{
     display: grid;
     grid-template-columns: 300px;
     grid-template-rows: 210px 250px 20px;
@@ -36,7 +36,24 @@ body {
     transform-style: preserve-3d;
     transform: perspective(1000px);
 }
-.rgb::after{
+.card.rounded{
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 250px 20px;
+    grid-template-areas: "image" "text";
+
+    border-radius: 10rem;
+    background: #1d1d1d;
+    color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    text-align: justify;
+    cursor: pointer;
+
+    margin: 30px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.rgb.rectangle::after{
     content: "";
     background: linear-gradient(45deg,
     #ff0000 0%,
@@ -54,7 +71,30 @@ body {
     repeat 0% 0% / 300% 100%;
     position: absolute;
     inset: -3px;
-    border-radius: 16px;
+    border-radius: 1rem;
+    filter: blur(8px);
+    transform: translateZ(-1px);
+    animation: rgb 6s linear infinite;
+}
+.rgb.rounded::after{
+    content: "";
+    background: linear-gradient(45deg,
+    #ff0000 0%,
+    #ff9a00 10%,
+    #d0de21 20%,
+    #4fdc4a 30%,
+    #3fdad8 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    #5f15f2 70%,
+    #ba0cf8 80%,
+    #fb07d9 90%,
+    #ff0000 100%
+    )
+    repeat 0% 0% / 300% 100%;
+    position: absolute;
+    inset: -3px;
+    border-radius: 10rem;
     filter: blur(8px);
     transform: translateZ(-1px);
     animation: rgb 6s linear infinite;
@@ -82,15 +122,15 @@ body {
 .card-image-3 {
     grid-area: image;
     background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url(./imgs/foodForestLayers/foodForest.3.shrubLayer.1.jpeg);
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: 10rem;
+    border-top-left-radius: 10rem;
     background-size: cover; 
 }
 .card-image-4 {
     grid-area: image;
     background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url(./imgs/foodForestLayers/foodForest.4.herbaceousLayer.1.jpeg);
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: 10rem;
+    border-top-left-radius: 10rem;
     background-size: cover; 
 }
 
